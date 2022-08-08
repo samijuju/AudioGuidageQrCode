@@ -1,4 +1,4 @@
-# Projet Chris Haga
+# Projet Audio guidage par qrcode
 
 ## - Cordova
 ```
