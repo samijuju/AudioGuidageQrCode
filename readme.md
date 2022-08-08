@@ -15,11 +15,12 @@ Ajouter dans le fichier "platforms/android/app/src/main/AndroidManifest.xml" ent
     <uses-permission android:name="android.permission.FLASHLIGHT" />
     <uses-feature android:name="android.hardware.camera" android:required="true" />
 </manifest>
+```
 
 ## - Vue + vite (à la racine du projet)
 ```
-npm create vite@latest chris-haga-vue-part -- --template vue
-cd chris-haga-vue-part
+npm create vite@latest front -- --template vue
+cd front
 npm install
 npm run dev
 ```
@@ -61,12 +62,6 @@ npm i html5-qrcode
 import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
-
-// To use Html5QrcodeScanner (more info below)
-import {Html5QrcodeScanner} from "html5-qrcode"
-
-// To use Html5Qrcode (more info below)
-#import {Html5Qrcode} from "html5-qrcode"
 
 window.useCordova = true
 
