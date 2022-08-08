@@ -52,7 +52,7 @@ npm i html5-qrcode
 ```
 
 #### Ajouter
-```
+```html
 <div id="app"></div>
 ```
 
