@@ -1,8 +1,8 @@
-# Projet Audio guidage par qrcode
+# Projet Audio guidage par qrcode (de zéro):
 
 ## - Cordova
 ```
-cordova create projet-chris-haga re.tibillet.chrishaga projetChrisHaga
+cordova create AudioGuidageQrCode re.tibillet.AudioGuidageQrCode AudioGuidageQrCode
 cd projet-chris-haga
 cordova platform add android
 ```
