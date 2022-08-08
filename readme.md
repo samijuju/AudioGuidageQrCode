@@ -84,7 +84,7 @@ if (window.useCordova === true) {
 }
 ```
 
-## Modifier le code dans vue(dossier "chris-haga-vue-part")
+## Modifier le code dans vue(dossier "front")
 - Coder   
 - "Builder"
 ```
