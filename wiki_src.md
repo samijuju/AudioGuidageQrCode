@@ -22,6 +22,7 @@ Ajouter dans le fichier "platforms/android/app/src/main/AndroidManifest.xml" ent
 npm create vite@latest front -- --template vue
 cd front
 npm install
+npm install vue-router -S
 npm run dev
 ```
 
@@ -59,34 +60,40 @@ npm i html5-qrcode
 
 #### "main.js" de base
 ```
-import { createApp } from 'vue'
+import {createApp} from 'vue'
+import router from './router'
 import './style.css'
 import App from './App.vue'
 
 window.useCordova = true
 
+function initApp() {
+  const app = createApp(App)
+  app.use(router).mount('#app')
+}
+
 if (window.useCordova === true) {
   //cordova
   document.addEventListener('deviceready', () => {
-    createApp(App).mount('#app')
+    initApp()
   }, false);
 } else {
   //browser
   document.addEventListener('DOMContentLoaded', (event) => {
     console.log('Navigateur, window.useCordova =', window.useCordova)
-    createApp(App).mount('#app')
+    initApp()
   })
 }
 ```
 
-## Modifier le code dans vue(dossier "front")
+## Etape 1 - Modifier le code dans vue(dossier "front")
 - Coder   
 - "Builder"
 ```
 npm run build
 ```
 
-## Construiser votre application cordova(racine du projet)
+## Etape 2 - Construiser votre application cordova(racine du projet)
 ```
 cordova build android
 cordova run android

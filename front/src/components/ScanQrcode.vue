@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button @click="scanQrCode()">Scanner</button>
+    <button id="bt-scan" @click="scanQrCode()">Scanner</button>
   </div>
   <div id="reader"></div>
 </template>
@@ -9,6 +9,7 @@
 import {Html5Qrcode} from "html5-qrcode"
 
 const props = defineProps({
+  expected: Array,
   qrbox: {
     type: Number,
     default: 250
@@ -21,25 +22,11 @@ const props = defineProps({
 
 const emit = defineEmits(['resultat'])
 let cameraId
-
-/*
-Html5Qrcode.getCameras().then(devices => {
-
-   // devices would be an array of objects of type:
-   // { id: "id", label: "label" }
-
-  if (devices && devices.length) {
-    cameraId = devices[0].id
-    console.log('camera =', cameraId)
-    // .. use this to start scanning.
-  }
-}).catch(err => {
-  console.log('->', err)
-})
-*/
+let html5QrCode
 
 function scanQrCode() {
-  const html5QrCode = new Html5Qrcode("reader");
+  document.querySelector('#bt-scan').style.display = 'none'
+  html5QrCode = new Html5Qrcode("reader")
   const qrCodeSuccessCallback = (decodedText, decodedResult) => {
     /* handle success */
   }
@@ -49,9 +36,26 @@ function scanQrCode() {
   html5QrCode.start({facingMode: "environment"}, config, onScanSuccess)
 }
 
+function stopScanQrCode() {
+  html5QrCode.stop().then(ignore => {
+    // QR Code scanning is stopped.
+    console.log("QR Code scanning stopped.")
+  }).catch(err => {
+    // Stop failed, handle it.
+    console.log("Unable to stop scanning.")
+  })
+}
 
 function onScanSuccess(decodedText, decodedResult) {
-  emit('resultat', decodedText, decodedResult)
+  console.log('test:')
+  console.log('decodedText =', decodedText)
+  console.log('ScanQrCode.vue - expected =', props.expected)
+  console.log('include =',props.expected.includes(decodedText))
+  // si valeur attendue bonne émettre
+  if (props.expected.includes(decodedText) === true) {
+    stopScanQrCode()
+    emit('resultat', decodedText, decodedResult)
+  }
 }
 </script>
 

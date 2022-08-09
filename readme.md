@@ -1,13 +1,23 @@
 # Projet Audio guidage par qrcode:
 
-## Modifier le code dans vue(dossier "front")
+## Une fois le projet cloner
+- A la racine
+```
+npm i
+```
+- dans "front"
+```
+npm i
+```
+
+## Etape 1 - Modifier le code dans vue(dossier "front")
 - Coder   
 - "Builder"
 ```
 npm run build
 ```
 
-## Construiser votre application cordova(racine du projet)
+## Etape 2 - Construiser votre application cordova(racine du projet)
 ```
 cordova build android
 cordova run android

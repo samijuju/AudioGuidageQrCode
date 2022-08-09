@@ -1,18 +1,24 @@
-import { createApp } from 'vue'
+import {createApp} from 'vue'
+import router from './router'
 import './style.css'
 import App from './App.vue'
 
 window.useCordova = true
 
+function initApp() {
+  const app = createApp(App)
+  app.use(router).mount('#app')
+}
+
 if (window.useCordova === true) {
   //cordova
   document.addEventListener('deviceready', () => {
-    createApp(App).mount('#app')
+    initApp()
   }, false);
 } else {
   //browser
   document.addEventListener('DOMContentLoaded', (event) => {
     console.log('Navigateur, window.useCordova =', window.useCordova)
-    createApp(App).mount('#app')
+    initApp()
   })
 }

@@ -1,9 +1,6 @@
 <template>
-  <h1>
-    <div>Audio Guidage</div>
-    <div>Cordova + Vue + vite</div>
-  </h1>
-  <router-view />
+<h1>Page 4</h1>
+  <button @click="router.push('/')">Retour</button>
 </template>
 
 <script setup>
