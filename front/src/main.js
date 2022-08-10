@@ -1,7 +1,11 @@
 import {createApp} from 'vue'
 import router from './router'
-import './style.css'
-import App from './App.vue'
+import '@/assets/css/style.css'
+import App from '@/App.vue'
+
+// bootstrap (ui)
+import '@/assets/css/bootstrap-5.0.2/bootstrap.min.css'
+import '@/assets/js/bootstrap-5.0.2/bootstrap.bundle.min.js'
 
 window.useCordova = true
 
