@@ -1,6 +1,7 @@
 <template>
   <div>{{ resultat }}</div>
   <!-- 
+    bootstrap déja installer dans 
  	<head>
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -110,8 +111,8 @@ onMounted(() => {
 
 <style>
 #intro {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
