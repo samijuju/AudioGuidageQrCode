@@ -8,14 +8,12 @@ import '@/assets/css/bootstrap-5.0.2/bootstrap.min.css'
 import '@/assets/js/bootstrap-5.0.2/bootstrap.bundle.min.js'
 
 
-window.useCordova = true
-
 function initApp() {
   const app = createApp(App)
   app.use(router).mount('#app')
 }
 
-if (window.useCordova === true) {
+if(window.hasOwnProperty("cordova")) {
   //cordova
   document.addEventListener('deviceready', () => {
     initApp()
