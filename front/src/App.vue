@@ -1,8 +1,4 @@
 <template>
-  <h1>
-    <div>Audio Guidage</div>
-    <div>Cordova + Vue + vite</div>
-  </h1>
   <router-view />
 </template>
 
