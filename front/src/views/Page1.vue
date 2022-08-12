@@ -3,14 +3,14 @@
     <div class="container-wd-pg">
       <div>
         <div class="btn-play">
-                <div class="play-bt" onclick="this.classList.toggle('active')">
-                    <div class="fond" x="0" y="0" width="200" height="200"></div>
-                    <div class="icon" width="200" height="200">
-                        <div class="side left" x="0" y="0" width="200" height="200" fill="#fff"></div>
-                        <div class="side right" x="0" y="0" width="200" height="200" fill="#fff"></div>
-                    </div>
-                </div>
+          <div class="play-bt" onclick="this.classList.toggle('active')">
+              <div class="fond" x="0" y="0" width="200" height="200"></div>
+            <div class="icon" width="200" height="200">
+              <div class="side left" x="0" y="0" width="200" height="200" fill="#fff"></div>
+              <div class="side right" x="0" y="0" width="200" height="200" fill="#fff"></div>
             </div>
+          </div>
+        </div>
       </div>
 
       <div class="marquee-wrap">
@@ -263,14 +263,6 @@ const router = useRouter()
     43.773% 43.428%
   );
   transition: clip-path 500ms;
-}
-.puntero {
-  border-radius: 50%;
-  cursor: pointer;
-  height: 100px;
-  position: absolute;
-  -webkit-tap-highlight-color: transparent;
-  width: 100px;
 }
 .active .icon {
   transform: rotate(-90deg);
