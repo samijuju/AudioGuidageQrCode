@@ -79,6 +79,7 @@ const routesQrCode = [
   { code: "https://m.tibillet.re/q47s4", route: "/Page2" },
   { code: "https://m.tibillet.re/q474s", route: "/Page1" }
 ]
+ // https://raffinerie.tibillet.re/qr/07510c96-6eda-48a9-b31e-149042068112
 
 
 // résultats qrcodes attendu
