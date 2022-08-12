@@ -18,9 +18,9 @@
         <strong>App name ou Autre!</strong> Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
         Fusce blandit ultrices sapien, in accumsan orci rhoncus eu!
       </p>
-      <br />
-      <br />
+      <div class="container">
       <ScanQrcode :expected="expected" :qrbox="250" :fps="10" style="width: 400px;height: 400px;" @resultat="onScan" />
+      </div>
       <footer>
         <a href="#one" class="button style2 down">
          <img id="down-arrow" :src="downArrow" alt="flèche direction bas">
@@ -49,7 +49,7 @@
 
 <script setup>
 import ScanQrcode from '@/components/ScanQrcode.vue'
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 
 // routes
 import { useRouter } from 'vue-router'
@@ -98,12 +98,6 @@ function onScan(decodedText, decodedResult) {
   console.log('test =', test)
 }
 
-onMounted(() => {
-  // élimine l'élément #reader
-  //   const ele = document.querySelector('#reader')
-  //   ele.parentNode.removeChild(ele)
-  console.log("-> test =", document.querySelector('#reader'))
-})
 </script>
 
 <style>
