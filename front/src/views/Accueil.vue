@@ -61,7 +61,7 @@
 
 <script setup>
 import ScanQrcode from '@/components/ScanQrcode.vue'
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 
 // routes
 import { useRouter } from 'vue-router'
@@ -77,7 +77,7 @@ const routesQrCode = [
   { code: "https://m.tibillet.re/sd4df", route: "/Page4" },
   { code: "https://m.tibillet.re/q47f7", route: "/Page3" },
   { code: "https://m.tibillet.re/q47s4", route: "/Page2" },
-  { code: "https://m.tibillet.re/q474s", route: "/Page1" }
+  { code: "https://raffinerie.tibillet.re/qr/07510c96-6eda-48a9-b31e-149042068112", route: "/Page1" }
 ]
  // https://raffinerie.tibillet.re/qr/07510c96-6eda-48a9-b31e-149042068112
 
@@ -110,12 +110,6 @@ function onScan(decodedText, decodedResult) {
   console.log('test =', test)
 }
 
-onMounted(() => {
-  // élimine l'élément #reader
-  //   const ele = document.querySelector('#reader')
-  //   ele.parentNode.removeChild(ele)
-  console.log("-> test =", document.querySelector('#reader'))
-})
 </script>
 
 <style>
