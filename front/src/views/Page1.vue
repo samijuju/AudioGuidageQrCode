@@ -1,54 +1,61 @@
 <template>
-  <section id="pg1" :style="{ backgroundImage: `url(${backgroundImagePg1})` }">
-    <div class="container-wd-pg">
-      <div>
-        <div class="btn-play">
-          <div class="play-bt" onclick="this.classList.toggle('active')">
-            <div class="fond" x="0" y="0" width="200" height="200"></div>
-            <div class="icon" width="200" height="200">
-              <div class="side gauche" x="0" y="0" width="200" height="200" fill="#fff"></div>
-              <div class="side droite" x="0" y="0" width="200" height="200" fill="#fff"></div>
-            </div>
-          </div>
-        </div>
+  <section id="pg1" class="overflow-hidden" :style="{ backgroundImage: `url(${backgroundImagePg1})` }">
+    <div class="d-flex flex-row justify-content-center mt-2 mb-2">
+      <div class="d-flex justify-content-center align-items-center container-icons-vue ms-1 me-1" role="button" @click="toggleAction()">
+        <BIconPlayFill v-if="buttonAction === 'play'" class="icons-vue1 t4rem rotate90"/>
+        <BIconPauseFill v-if="buttonAction === 'pause'" class="icons-vue1 t4rem"/>
       </div>
-
-      <div class="marquee-wrap">
-        <div class="marquee">
-          <p style="color: white;">
-            <b> Rogue, inconspicuous motes of rock </b>and gas descended from astronomers Sea of Tranquility billions upon billions star stuff harvesting star light stirred by starlight, Flatland billions upon billions vastness is bearable only through love great turbulent  e muse about! Cambrian explosion dispassionate extraterrestrial observer.
-            <br/>
-            and gas realm of the galaxies decipherment tendrils of gossamer clouds at the edge of forever? Worldlets Orion's sword Cambrian explosion, emerged into consciousness, laws of physics tendrils of gossamer clouds venture. Flatland paroxysm of global
-            death Jean-François Champollion.
-          </p><br/>
-        </div>
+      <div class="d-flex justify-content-center align-items-center container-icons-vue  ms-1 me-1" role="button" @click="router.push('/')">
+        <BIconHouseFill class="icons-vue1  t2-5rem"/>
       </div>
     </div>
-    <button @click="router.push('/')">Retour</button><br/>
+
+    <div class="marquee-wrap">
+      <div class="marquee">
+        <p style="color: white;text-shadow: 3px 3px 4px black;">
+          <b> Rogue, inconspicuous motes of rock </b>and gas descended from astronomers Sea of Tranquility billions upon
+          billions star stuff harvesting star light stirred by starlight, Flatland billions upon billions vastness is
+          bearable only through love great turbulent e muse about! Cambrian explosion dispassionate extraterrestrial
+          observer.
+          <br/>
+          and gas realm of the galaxies decipherment tendrils of gossamer clouds at the edge of forever? Worldlets
+          Orion's sword Cambrian explosion, emerged into consciousness, laws of physics tendrils of gossamer clouds
+          venture. Flatland paroxysm of global
+          death Jean-François Champollion.
+        </p><br/>
+      </div>
+    </div>
+
   </section>
 
 </template>
 
 <script setup>
+import {ref} from 'vue'
 import {useRouter} from 'vue-router'
-
-// medias: images en background
+// bootstrap-icons-vue - prefixed with BIcon. For example, the icon pause-fill is exported as BIconPauseFill
+// icons list : https://icons.getbootstrap.com/
+import {BIconPlayFill, BIconPauseFill, BIconHouseFill} from 'bootstrap-icons-vue'
 import backgroundImagePg1 from "@/assets/images/sunset.jpg"
-
 const router = useRouter()
+let buttonAction = ref('play')
+function toggleAction() {
+  if (buttonAction.value === 'play') {
+    buttonAction.value = 'pause'
+  } else {
+    buttonAction.value = 'play'
+  }
+}
 </script>
 
-<style>
+<style scoped>
+
 #pg1 {
-  width: 100vw;
-  height: 100vh;
-  background-position: absolute;
+  width: 100%;
+  height: 100%;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-.container-wd-pg {
-  padding-top: 5%;
 }
 
 </style>

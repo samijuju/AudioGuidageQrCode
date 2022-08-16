@@ -90,7 +90,36 @@ button:focus-visible {
   }
 }
 
-/*  Play Button */
+/*  Play Pause and home Buttons */
+
+.container-icons-vue {
+  width: 5rem;
+  height: 5rem;
+  background-color: #f4471f;
+  border-radius: 50%;
+  margin: 0 6px;
+}
+.t2-5rem {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.t4rem {
+  width: 4rem;
+  height: 4rem;
+}
+.icons-vue1 {
+  color: #FFFFFF;
+}
+.rotate90 {
+  transform: rotate(90deg);
+}
+
+.marquee-wrap {
+  /* hauteur calculée */
+	height: calc(100% - 100px);
+}
+
+/* */
 
 .play-bt {
   align-items: center;
