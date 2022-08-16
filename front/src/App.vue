@@ -1,13 +1,9 @@
 <template>
-  <h1>Audio Guidage</h1>
-  <h2>Cordova + Vue + vite</h2>
-  <div class="container">
-    <router-view />
-  </div>
+  <router-view />
 </template>
 
 <script setup>
-import { useRouter } from 'vue-router'
+import {useRouter} from 'vue-router'
 
 const router = useRouter()
 </script>
