@@ -1,4 +1,7 @@
 <template>
+  <audio autoplay>
+    <source src="@/assets/musiques/test-pg3.mp3">
+  </audio>
   <section id="pg3" class="overflow-hidden" :style="{ backgroundImage: `url(${backgroundImagePg3})` }">
     <div class="d-flex flex-row justify-content-center mt-2 mb-2">
       <div class="d-flex justify-content-center align-items-center container-icons-vue ms-1 me-1" role="button" @click="toggleAction()">
