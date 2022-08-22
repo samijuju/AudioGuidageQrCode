@@ -1,7 +1,6 @@
 <template>
-  <div>{{ resultat }}</div>
-
   <section id="intro" :style="{ backgroundImage: `url(${backgroundImage})` }">
+    <!-- <buton class="text-primary" @click="router.push('/PageTest')">TestPage</buton> -->
     <div>
       <header>
         <h2 style="color:white;">Jardin App.</h2>
@@ -11,15 +10,15 @@
         <strong>App name ou Autre!</strong> Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
         Fusce blandit ultrices sapien, in accumsan orci rhoncus eu!
       </p>
-      <br />
-      <br />
 
       <ScanQrcode :expected="expected" :qrbox="250" :fps="10" style="width: 400px;height: 400px;" @resultat="onScan" />
-      <br/><br/><br/><br/><br/><br/>
+
       
-      <footer>
+      <footer class="mt-5">
         <a href="#one">
-          <button type="button" class="btn bg-transparent" style='font-size: 25px; border-color:white; color:white;'>&dArr;</button>
+          <button type="button" class="btn bg-transparent" style='font-size: 25px; border-color:white; color:white;'>
+            <BIconArrowDown />
+          </button>
         </a>
       </footer>
     </div>
@@ -62,10 +61,14 @@ import { useRouter } from 'vue-router'
 // medias: images en background
 import backgroundImage from "@/assets/images/first.jpg"
 import backgroundImageOne from "@/assets/images/one.jpg"
+// icon
+import {BIconArrowDown} from 'bootstrap-icons-vue'
+
 
 const router = useRouter()
 
 const routesQrCode = [
+  { code: "https://m.tibillet.re/q474f", route: "/PageTest" },
   { code: "https://m.tibillet.re/q474d", route: "/Page5" },
   { code: "https://m.tibillet.re/sd4df", route: "/Page4" },
   { code: "https://m.tibillet.re/q47f7", route: "/Page3" },
@@ -81,17 +84,11 @@ for (let i = 0; i < routesQrCode.length; i++) {
   expected.push(routesQrCode[i].code)
 }
 
-
-let resultat = ref('')
-
-function onScan(decodedText, decodedResult) {
+function onScan(qrCodeMessage) {
   console.log('-> fonc onScan !')
-  console.log('decodedText =', decodedText)
-  console.log('decodedResult =', decodedResult)
-  resultat.value = decodedText
+  console.log('qrCodeMessage =', qrCodeMessage)
 
-
-  const test = routesQrCode.find(obj => obj.code === decodedText)
+  const test = routesQrCode.find(obj => obj.code === qrCodeMessage)
   if (test !== undefined) {
     // Stoper le  lecteur de qrcode
     // Aller à la page
