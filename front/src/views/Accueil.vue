@@ -68,12 +68,12 @@ import {BIconArrowDown} from 'bootstrap-icons-vue'
 const router = useRouter()
 
 const routesQrCode = [
-  { code: "https://m.tibillet.re/q474f", route: "/PageTest" },
-  { code: "https://m.tibillet.re/q474d", route: "/Page5" },
-  { code: "https://m.tibillet.re/sd4df", route: "/Page4" },
-  { code: "https://m.tibillet.re/q47f7", route: "/Page3" },
-  { code: "https://m.tibillet.re/q47s4", route: "/Page2" },
-  { code: "https://m.tibillet.re/q474s", route: "/Page1" }
+  { code: "chpt", route: "/PageTest" },
+  { code: "chp5", route: "/Page5" },
+  { code: "chp4", route: "/Page4" },
+  { code: "chp3", route: "/Page3" },
+  { code: "chp2", route: "/Page2" },
+  { code: "chp1", route: "/Page1" }
 ]
  // https://raffinerie.tibillet.re/qr/07510c96-6eda-48a9-b31e-149042068112
 
