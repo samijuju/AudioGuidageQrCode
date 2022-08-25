@@ -7,24 +7,33 @@
       </header>
       <p style="color:white;">
         Bienvenue à
-        <strong>App name ou Autre!</strong> Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
+        <strong>App name ou Autre!</strong> Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore
+        condimentum.
         Fusce blandit ultrices sapien, in accumsan orci rhoncus eu!
       </p>
 
-      <ScanQrcode :expected="expected" :qrbox="250" :fps="10" style="width: 400px;height: 400px;" @resultat="onScan" />
+      <ScanQrcode :expected="expected" :qrbox="250" :fps="10" style="width: 400px;height: 400px;" @resultat="onScan"/>
 
-      
+      <div class="d-flex flex-row justify-content-sm-center align-items-center mt-2">
+        <img :src="oiseau" class="ms-1 me-1" role="button" @click="router.push('/Page1')">
+        <img :src="oiseau" class="ms-1 me-1" role="button" @click="router.push('/Page2')">
+        <img :src="oiseau" class="ms-1 me-1" role="button" @click="router.push('/Page3')">
+        <img :src="oiseau" class="ms-1 me-1" role="button" @click="router.push('/Page4')">
+        <img :src="oiseau" class="ms-1 me-1" role="button" @click="router.push('/Page5')">
+      </div>
+
       <footer class="mt-5">
         <a href="#one">
           <button type="button" class="btn bg-transparent" style='font-size: 25px; border-color:white; color:white;'>
-            <BIconArrowDown />
+            <BIconArrowDown/>
           </button>
         </a>
       </footer>
     </div>
   </section>
 
-  <section id="one" class="main style2 right dark fullscreen" :style="{ backgroundImage: `url(${backgroundImageOne})` }">
+  <section id="one" class="main style2 right dark fullscreen"
+           :style="{ backgroundImage: `url(${backgroundImageOne})` }">
 
     <div class="content-style2">
       <div class="slide-right">
@@ -40,10 +49,10 @@
           Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
           Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis arcu,
           id varius justo euismod in. Curabitur egestas consectetur magna.
-          <br />ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
+          <br/>ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
           Fusce blandit ultrices sapien, Sed sodales venenatis arcu,
           id varius justo euismod in. Curabitur egestas consectetur magna.
-          <br />
+          <br/>
         </p>
       </div>
     </div>
@@ -53,14 +62,16 @@
 
 <script setup>
 import ScanQrcode from '@/components/ScanQrcode.vue'
-import { ref } from 'vue'
+import {ref} from 'vue'
 
 // routes
-import { useRouter } from 'vue-router'
+import {useRouter} from 'vue-router'
 
 // medias: images en background
 import backgroundImage from "@/assets/images/first.jpg"
 import backgroundImageOne from "@/assets/images/one.jpg"
+import oiseau from "@/assets/images/oiseau_40x40.png"
+
 // icon
 import {BIconArrowDown} from 'bootstrap-icons-vue'
 
@@ -68,14 +79,14 @@ import {BIconArrowDown} from 'bootstrap-icons-vue'
 const router = useRouter()
 
 const routesQrCode = [
-  { code: "chpt", route: "/PageTest" },
-  { code: "chp5", route: "/Page5" },
-  { code: "chp4", route: "/Page4" },
-  { code: "chp3", route: "/Page3" },
-  { code: "chp2", route: "/Page2" },
-  { code: "chp1", route: "/Page1" }
+  {code: "chpt", route: "/PageTest"},
+  {code: "chp5", route: "/Page5"},
+  {code: "chp4", route: "/Page4"},
+  {code: "chp3", route: "/Page3"},
+  {code: "chp2", route: "/Page2"},
+  {code: "chp1", route: "/Page1"}
 ]
- // https://raffinerie.tibillet.re/qr/07510c96-6eda-48a9-b31e-149042068112
+// https://raffinerie.tibillet.re/qr/07510c96-6eda-48a9-b31e-149042068112
 
 
 // résultats qrcodes attendu
@@ -129,11 +140,11 @@ function onScan(qrCodeMessage) {
   padding: 10%;
   overflow: hidden;
   box-shadow: 0 0 25px #000;
-  border: 1px solid #444;  
+  border: 1px solid #444;
   text-align: center;
 }
 
-p{
+p {
   font-size: 20px;
   color: #444;
 }
@@ -145,6 +156,7 @@ p{
 .slide-right {
   animation: 3s slide-right;
 }
+
 @keyframes slide-right {
   from {
     margin-left: -100%;
@@ -158,6 +170,7 @@ p{
 .slide-left {
   animation: 3s slide-left;
 }
+
 @keyframes slide-left {
   from {
     margin-left: 100%;
@@ -172,15 +185,17 @@ p{
   width: 200px;
   margin: auto;
 }
+
 .fade-in {
   animation: fadeIn ease 3s;
 }
-@keyframes fadeIn{
+
+@keyframes fadeIn {
   0% {
-    opacity:0;
+    opacity: 0;
   }
   100% {
-    opacity:1;
+    opacity: 1;
   }
 }
 
