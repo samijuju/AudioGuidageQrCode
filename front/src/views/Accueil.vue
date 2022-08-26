@@ -13,15 +13,25 @@
       </p>
 
       <ScanQrcode :expected="expected" :qrbox="250" :fps="10" style="width: 400px;height: 400px;" @resultat="onScan"/>
-
-      <div class="d-flex flex-row justify-content-sm-center align-items-center mt-2">
-        <img :src="oiseau" class="ms-1 me-1" role="button" @click="router.push('/Page1')">
-        <img :src="oiseau" class="ms-1 me-1" role="button" @click="router.push('/Page2')">
-        <img :src="oiseau" class="ms-1 me-1" role="button" @click="router.push('/Page3')">
-        <img :src="oiseau" class="ms-1 me-1" role="button" @click="router.push('/Page4')">
-        <img :src="oiseau" class="ms-1 me-1" role="button" @click="router.push('/Page5')">
+      <div class="img-pages">
+        <div class="d-flex flex-row justify-content-sm-center align-items-center mt-2">
+          <div class="col1">
+            <img :src="oiseau" class="ms-1 me-1" role="button" @click="router.push('/Page1')">
+          </div>
+          <div class="col1">
+            <img :src="oiseau" class="ms-1 me-1" role="button" @click="router.push('/Page2')">
+          </div>
+          <div class="col1">
+            <img :src="oiseau" class="ms-1 me-1" role="button" @click="router.push('/Page3')">
+          </div>
+          <div class="col1">
+            <img :src="oiseau" class="ms-1 me-1" role="button" @click="router.push('/Page4')">
+          </div>
+          <div class="col1">
+            <img :src="oiseau" class="ms-1 me-1" role="button" @click="router.push('/test_pg')">
+          </div>
+        </div>
       </div>
-
       <footer class="mt-5">
         <a href="#one">
           <button type="button" class="btn bg-transparent" style='font-size: 25px; border-color:white; color:white;'>
