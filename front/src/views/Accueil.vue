@@ -1,17 +1,7 @@
 <template>
-  <section id="intro" :style="{ backgroundImage: `url(${backgroundImage})` }">
-    <!-- <buton class="text-primary" @click="router.push('/PageTest')">TestPage</buton> -->
-    <div>
-      <header>
-        <h2 style="color:white;">Jardin App.</h2>
-      </header>
-      <p style="color:white;">
-        Bienvenue à
-        <strong>App name ou Autre!</strong> Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore
-        condimentum.
-        Fusce blandit ultrices sapien, in accumsan orci rhoncus eu!
-      </p>
+  <section id="intro" :style="{ backgroundImage: `url(${backgroundImage})` }"><br/>
 
+    <div style="margin-top: 130px;">
       <ScanQrcode :expected="expected" :qrbox="250" :fps="10" style="width: 400px;height: 400px;" @resultat="onScan"/>
       <div class="img-pages">
         <div class="d-flex flex-row justify-content-sm-center align-items-center mt-2">
@@ -76,7 +66,7 @@ import {ref} from 'vue'
 // routes
 import {useRouter} from 'vue-router'
 // medias: images en background
-import backgroundImage from "@/assets/images/first.jpg"
+import backgroundImage from "@/assets/images/chaga.png"
 import backgroundImageOne from "@/assets/images/one.jpg"
 import oiseau from "@/assets/images/oiseau_40x40.png"
 // icon
