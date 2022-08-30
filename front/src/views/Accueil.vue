@@ -28,7 +28,7 @@
             <img :src="oiseau" class="ms-1 me-1" role="button" @click="router.push('/Page4')">
           </div>
           <div class="col1">
-            <img :src="oiseau" class="ms-1 me-1" role="button" @click="router.push('/test_pg')">
+            <img :src="oiseau" class="ms-1 me-1" role="button" @click="router.push('/Page5')">
           </div>
         </div>
       </div>

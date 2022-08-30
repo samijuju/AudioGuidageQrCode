@@ -4,10 +4,6 @@
   </audio>
   <section id="pg1" class="overflow-hidden" :style="{ backgroundImage: `url(${backgroundImagePg1})` }">
     <div class="d-flex flex-row justify-content-center mt-2 mb-2">
-      <div class="d-flex justify-content-center align-items-center container-icons-vue  ms-1 me-1" role="button"
-           @click="replayAudio()">
-        <BIconSkipBackwardFill class="icons-vue1  t2-5rem"/>
-      </div>
       <div class="d-flex justify-content-center align-items-center container-icons-vue ms-1 me-1" role="button" @click="toggleAction()">
         <BIconPlayFill v-if="buttonAction === 'play'" class="icons-vue1 t4rem rotate90"/>
         <BIconPauseFill v-if="buttonAction === 'pause'" class="icons-vue1 t4rem"/>
