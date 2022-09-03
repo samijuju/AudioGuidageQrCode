@@ -1,6 +1,6 @@
 <template>
   <audio autoplay>
-    <source src="@/assets/musiques/chant_zoizo.wav">
+    <source src="@/assets/musiques/chant_zoizo.mp3">
   </audio>
   <section id="pg1" class="overflow-hidden" :style="{ backgroundImage: `url(${backgroundImagePg1})` }">
     <div class="d-flex flex-row justify-content-center mt-2 mb-2">
