@@ -13,20 +13,27 @@
       </div>
     </div>
 
-    <div class="marquee-wrap">
-      <div class="marquee">
-        <p style="color: white; text-shadow: 3px 3px 4px red;">
-          <b> Rogue, inconspicuous motes of rock </b>and gas descended from astronomers Sea of Tranquility billions upon
-          billions star stuff harvesting star light stirred by starlight, Flatland billions upon billions vastness is
-          bearable only through love great turbulent e muse about! Cambrian explosion dispassionate extraterrestrial
-          observer.
-          <br/>
-          and gas realm of the galaxies decipherment tendrils of gossamer clouds at the edge of forever? Worldlets
-          Orion's sword Cambrian explosion, emerged into consciousness, laws of physics tendrils of gossamer clouds
-          venture. Flatland paroxysm of global
-          death Jean-François Champollion.
-        </p><br/>
-      </div>
+    <div class="marquee-wrap-test">
+      <p style="color: white; text-shadow: 3px 3px 4px black;">
+        <b> Rogue, inconspicuous motes of rock </b>and gas descended from astronomers Sea of Tranquility billions upon
+        billions star stuff harvesting star light stirred by starlight, Flatland billions upon billions vastness is
+        bearable only through love great turbulent e muse about! Cambrian explosion dispassionate extraterrestrial
+        observer.
+        <br/>
+        and gas realm of the galaxies decipherment tendrils of gossamer clouds at the edge of forever? Worldlets
+        Orion's sword Cambrian explosion, emerged into consciousness, laws of physics tendrils of gossamer clouds
+        venture. Flatland paroxysm of global
+        death Jean-François Champollion.
+                  <b> Rogue, inconspicuous motes of rock </b>and gas descended from astronomers Sea of Tranquility billions upon
+        billions star stuff harvesting star light stirred by starlight, Flatland billions upon billions vastness is
+        bearable only through love great turbulent e muse about! Cambrian explosion dispassionate extraterrestrial
+        observer.
+        <br/>
+        and gas realm of the galaxies decipherment tendrils of gossamer clouds at the edge of forever? Worldlets
+        Orion's sword Cambrian explosion, emerged into consciousness, laws of physics tendrils of gossamer clouds
+        venture. Flatland paroxysm of global
+        death Jean-François Champollion.<br/>
+      </p><br/>
     </div>
 
   </section>

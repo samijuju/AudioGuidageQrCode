@@ -151,7 +151,6 @@ button:focus-visible {
 	font-size:45px;
 	line-height:1.6;
 }
-/* Garder le scrolling tactile en cas ou on combine les deux!!!
 .marquee-wrap-test {
 	overflow:auto;
 	margin-left: auto;
@@ -169,12 +168,8 @@ button:focus-visible {
 	font-size:45px;
 	line-height:1.6;
 }
-*/
 
-/* increase duration to speed up scroll */
-.marquee{
-	animation:scrollUp 30s linear 1s infinite;
-}
+
 
 @supports (transform:translate3d(0px,0px,0px)){
 	.marquee-wrap {overflow:hidden; }
