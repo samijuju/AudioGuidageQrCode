@@ -1,6 +1,6 @@
 <template>
   <audio autoplay>
-    <source src="@/assets/musiques/test-pg3.mp3">
+    <source src="@/assets/musiques/la_pluie_violoncelle.wav">
   </audio>
   <section id="pg3" class="overflow-hidden" :style="{ backgroundImage: `url(${backgroundImagePg3})` }">
     <div class="d-flex flex-row justify-content-center mt-2 mb-2">
