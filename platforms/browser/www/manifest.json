@@ -1,9 +1,9 @@
 {
   "background_color": "#FFF",
   "display": "standalone",
-  "name": "projetChrisHaga",
-  "short_name": "projetChrisHaga",
-  "version": "re.tibillet.chrishaga",
+  "name": "audioGuidage",
+  "short_name": "audioGuidage",
+  "version": "re.tibillet.audioguidage",
   "description": "Sample Apache Cordova App",
   "author": "Apache Cordova Team",
   "icons": [],

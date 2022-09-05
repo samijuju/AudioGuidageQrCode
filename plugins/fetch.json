@@ -1,1 +1,10 @@
-{}
+{
+  "cordova-plugin-android-permissions": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-android-permissions@^1.1.3"
+    },
+    "is_top_level": true,
+    "variables": {}
+  }
+}

@@ -5,6 +5,7 @@
 cordova create AudioGuidageQrCode re.tibillet.AudioGuidageQrCode AudioGuidageQrCode
 cd projet-chris-haga
 cordova platform add android
+cordova plugin add cordova-plugin-android-permissions
 ```
 ### Activer le choix d'autoriser ou non l'utilisation de la camera (indispenssable !)
 Ajouter dans le fichier "platforms/android/app/src/main/AndroidManifest.xml" entre les balises "manifest":

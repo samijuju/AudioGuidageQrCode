@@ -6,6 +6,23 @@
   "config_munge": {
     "files": {}
   },
-  "installed_plugins": {},
-  "dependent_plugins": {}
+  "installed_plugins": {
+    "cordova-plugin-android-permissions": {
+      "PACKAGE_NAME": "re.tibillet.audioguidage"
+    }
+  },
+  "dependent_plugins": {},
+  "modules": [
+    {
+      "file": "plugins/cordova-plugin-android-permissions/www/permissions-dummy.js",
+      "id": "cordova-plugin-android-permissions.Permissions",
+      "pluginId": "cordova-plugin-android-permissions",
+      "clobbers": [
+        "cordova.plugins.permissions"
+      ]
+    }
+  ],
+  "plugin_metadata": {
+    "cordova-plugin-android-permissions": "1.1.3"
+  }
 }
