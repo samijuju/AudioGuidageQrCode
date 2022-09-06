@@ -101,3 +101,77 @@ cordova run android
 ```
 
 ## Debug sur navigateur - "chrome://inspect/#devices"
+
+## WPA
+
+### Installation
+
+#### Modules
+```
+npm install vite-plugin-pwa -D
+npm install workbox-precaching -D
+```
+### Le fichier de service worker "serviceWorker.ts"
+```
+import { precacheAndRoute } from 'workbox-precaching'
+
+declare let self: ServiceWorkerGlobalScope
+
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') self.skipWaiting()
+})
+// self.__WB_MANIFEST is default injection point
+precacheAndRoute(self.__WB_MANIFEST)
+```
+
+### Icons
+Préparer 3 icons format png dans le dossier public(vite):
+- 1 résolutions 32x32, favicon-32x32.png
+- 2 résolutions 192x192, logo-192x192.png
+- 3 résolutions 512x512, logo-512x512.png
+
+### Configuration
+vite.config.js:
+```
+import {VitePWA} from 'vite-plugin-pwa'
+
+...
+ plugins: [
+    vue(),
+    VitePWA({
+      mode: "development",
+      base: "/",
+      srcDir: "src",
+      filename: "serviceWorker.ts",
+      includeAssets: ["/favicon-32x32.png"],
+      strategies: "injectManifest",
+      manifest: {
+        name: "Aux sons du jardin",
+        short_name: "Aux sons du jardin",
+        theme_color: "#ffffff",
+        start_url: "/",
+        display: "standalone",
+        background_color: "#ffffff",
+        icons: [
+          {
+            src: "logo-192x192.png",
+            sizes: "192x192",
+            type: "image/png",
+          },
+          {
+            src: "/logo-512x512.png",
+            sizes: "512x512",
+            type: "image/png",
+          },
+          {
+            src: "logo-512x512.png",
+            sizes: "512x512",
+            type: "image/png",
+            purpose: "any maskable",
+          },
+        ]
+      }
+    })
+  ]
+...
+```
