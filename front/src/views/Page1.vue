@@ -1,12 +1,8 @@
 <template>
-  <audio autoplay>
-    <source src="@/assets/musiques/Maloya_Zoizo.mp3">
-  </audio>
   <section id="pg1" class="overflow-hidden" :style="{ backgroundImage: `url(${backgroundImagePg1})` }">
-
     <div class="d-flex flex-row justify-content-center mt-5 mb-5">
       <div class="d-flex flex-column justify-content-center align-items-center container-icons-vue" role="button"
-           @click="router.push('/')">
+           @click="goHome()">
         <BIconHouseFill class="icons-vue1  t2-5rem"/>
       </div>
     </div>
@@ -38,6 +34,10 @@ import {BIconHouseFill} from 'bootstrap-icons-vue'
 import backgroundImagePg1 from "@/assets/images/Zozio.jpg"
 
 const router = useRouter()
+
+function goHome() {
+  router.push('/')
+}
 </script>
 
 <style scoped>

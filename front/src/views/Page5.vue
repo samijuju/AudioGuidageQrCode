@@ -1,11 +1,8 @@
 <template>
-  <audio autoplay>
-    <source src="@/assets/musiques/Le_vent_et_son_instrument.mp3">
-  </audio>
   <section id="pg5" class="overflow-hidden" :style="{ backgroundImage: `url(${backgroundImagePg5})` }">
     <div class="d-flex flex-row justify-content-center mt-5 mb-5">
       <div class="d-flex flex-column justify-content-center align-items-center container-icons-vue" role="button"
-           @click="router.push('/')">
+           @click="goHome()">
         <BIconHouseFill class="icons-vue1  t2-5rem"/>
       </div>
     </div>
@@ -32,6 +29,7 @@
 </template>
 
 <script setup>
+import {onMounted} from 'vue'
 import {useRouter} from 'vue-router'
 // bootstrap-icons-vue - prefixed with BIcon. For example, the icon pause-fill is exported as BIconPauseFill
 // icons list : https://icons.getbootstrap.com/
@@ -39,6 +37,11 @@ import {BIconHouseFill} from 'bootstrap-icons-vue'
 import backgroundImagePg5 from "@/assets/images/LeVent-800x537.jpg"
 
 const router = useRouter()
+
+function goHome() {
+  router.push('/')
+}
+
 </script>
 
 <style scoped>

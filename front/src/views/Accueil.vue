@@ -12,11 +12,16 @@
                       @resultat="onScan"/>
         </div>
         <div class="d-flex flex-row justify-content-around align-items-center mt-2">
-          <div class="btn bg-transparent rounded-circle border-white icons-zone-taille overflow:hidden" :style="{ backgroundImage: `url(${iconPage1})` }" @click="router.push('/Page1')"></div>
-          <div class="btn bg-transparent rounded-circle border-white icons-zone-taille overflow:hidden" :style="{ backgroundImage: `url(${iconPage2})` }" @click="router.push('/Page2')"></div>
-          <div class="btn bg-transparent rounded-circle border-white icons-zone-taille overflow:hidden" :style="{ backgroundImage: `url(${iconPage3})` }" @click="router.push('/Page3')"></div>
-          <div class="btn bg-transparent rounded-circle border-white icons-zone-taille overflow:hidden" :style="{ backgroundImage: `url(${iconPage4})` }" @click="router.push('/Page4')"></div>
-          <div class="btn bg-transparent rounded-circle border-white icons-zone-taille overflow:hidden" :style="{ backgroundImage: `url(${iconPage5})` }" @click="router.push('/Page5')"></div>
+          <div class="btn bg-transparent rounded-circle border-white icons-zone-taille overflow:hidden"
+               :style="{ backgroundImage: `url(${iconPage1})` }" @click="goPage(1)"></div>
+          <div class="btn bg-transparent rounded-circle border-white icons-zone-taille overflow:hidden"
+               :style="{ backgroundImage: `url(${iconPage2})` }" @click="goPage(2)"></div>
+          <div class="btn bg-transparent rounded-circle border-white icons-zone-taille overflow:hidden"
+               :style="{ backgroundImage: `url(${iconPage3})` }" @click="goPage(3)"></div>
+          <div class="btn bg-transparent rounded-circle border-white icons-zone-taille overflow:hidden"
+               :style="{ backgroundImage: `url(${iconPage4})` }" @click="goPage(4)"></div>
+          <div class="btn bg-transparent rounded-circle border-white icons-zone-taille overflow:hidden"
+               :style="{ backgroundImage: `url(${iconPage5})` }" @click="goPage(5)"></div>
         </div>
       </div>
     </div>
@@ -70,9 +75,8 @@
 </template>
 
 <script setup>
+import {onMounted} from 'vue'
 import ScanQrcode from '@/components/ScanQrcode.vue'
-// import ReloadPWA from '@/components/ReloadPWA.vue'
-import {ref} from 'vue'
 // routes
 import {useRouter} from 'vue-router'
 // medias: images en background
@@ -97,7 +101,7 @@ const routesQrCode = [
   {code: "chp2", route: "/Page2"},
   {code: "chp1", route: "/Page1"}
 ]
-// https://raffinerie.tibillet.re/qr/07510c96-6eda-48a9-b31e-149042068112
+
 // résultats qrcodes attendu
 let expected = []
 for (let i = 0; i < routesQrCode.length; i++) {
@@ -109,7 +113,10 @@ function onScan(qrCodeMessage) {
   console.log('qrCodeMessage =', qrCodeMessage)
   const test = routesQrCode.find(obj => obj.code === qrCodeMessage)
   if (test !== undefined) {
-    // Stoper le  lecteur de qrcode
+    // lancer la lecture du mp3
+    const idPage = test.route.substring(5,6)
+    console.log('idPage = ->' + idPage + '<-')
+    document.querySelector('#audio-ch' + idPage).play()
     // Aller à la page
     console.log('-> route =', test.route)
     router.push(test.route)
@@ -118,6 +125,19 @@ function onScan(qrCodeMessage) {
   }
   console.log('test =', test)
 }
+
+function goPage(idPage) {
+  document.querySelector('#audio-ch' + idPage).play()
+  router.push('/Page' + idPage)
+}
+
+onMounted(() => {
+  const eles = document.querySelectorAll('.audio-mp3')
+  for (let i = 0; i < eles.length; i++) {
+    eles[i].pause()
+  }
+})
+
 </script>
 
 <style>
