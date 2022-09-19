@@ -9,11 +9,6 @@ const routes = [
     alias: '/index.html'
   },
   {
-    path: '/PageTest',
-    name: 'PageTest',
-    component: () => import(/* webpackChunkName: "PageTest" */ '../views/PageTest.vue')
-  },
-  {
     path: '/Page1',
     name: 'Page1',
     component: () => import(/* webpackChunkName: "Page1" */ '../views/Page1.vue')
