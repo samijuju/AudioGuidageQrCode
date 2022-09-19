@@ -7,6 +7,7 @@
 
 <script setup>
 import {useRouter} from 'vue-router'
+
 const listAudio = [
   {id: 'audio-ch1', url: './musiques/Maloya_Zoizo.mp3'},
   {id: 'audio-ch2', url: './musiques/La_pluie_en_mantra.mp3'},
@@ -15,6 +16,7 @@ const listAudio = [
   {id: 'audio-ch5', url: './musiques/Le_vent_et_son_instrument.mp3'}
 ]
 const router = useRouter()
+
 </script>
 
 <style scoped>

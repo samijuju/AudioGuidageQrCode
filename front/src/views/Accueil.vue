@@ -34,7 +34,7 @@
     </footer>
   </section>
 
-  <section id="one">
+  <section id="one" class="d-flex justify-content-center align-items-center">
     <div class="content-style2">
 
       <h2 style="text-align: center">Les compositions</h2>
@@ -69,7 +69,11 @@
         Résidence <q>Patrimoine et création</q> réalisée entre février et
         septembre 2022.
       </p>
-
+      <div class="d-flex justify-content-center align-items-center mt-2">
+        <a href="#intro" class="btn bg-dark rounded-circle text-white border-white fs-2 ">
+          <BIconArrowUp/>
+        </a>
+      </div>
     </div>
   </section>
 </template>
@@ -81,7 +85,6 @@ import ScanQrcode from '@/components/ScanQrcode.vue'
 import {useRouter} from 'vue-router'
 // medias: images en background
 import backgroundImage from "@/assets/images/chris_haga-800x967.jpg"
-// import logo from "@/assets/images/chris_haga_logo-68x82.png"
 import logo from "@/assets/images/LogoChris.svg"
 import logoRegionReunion from "@/assets/images/logo_region-reunion-150x41.png"
 import logoJardinBotaniqueReunion from "@/assets/images/logo-mascarin-jardin-botanique-148x50.jpg"
@@ -91,7 +94,7 @@ import iconPage2 from "@/assets/images/goutte-eau-p2.png"
 import iconPage3 from "@/assets/images/Nuit-p3.png"
 import iconPage4 from "@/assets/images/LogoChris-p4.png"
 import iconPage5 from "@/assets/images/LeVent-p5.png"
-import {BIconArrowDown} from 'bootstrap-icons-vue'
+import {BIconArrowDown, BIconArrowUp} from 'bootstrap-icons-vue'
 
 const router = useRouter()
 const routesQrCode = [
@@ -111,10 +114,11 @@ for (let i = 0; i < routesQrCode.length; i++) {
 function onScan(qrCodeMessage) {
   console.log('-> fonc onScan !')
   console.log('qrCodeMessage =', qrCodeMessage)
+
   const test = routesQrCode.find(obj => obj.code === qrCodeMessage)
   if (test !== undefined) {
     // lancer la lecture du mp3
-    const idPage = test.route.substring(5,6)
+    const idPage = test.route.substring(5, 6)
     console.log('idPage = ->' + idPage + '<-')
     document.querySelector('#audio-ch' + idPage).play()
     // Aller à la page
@@ -152,9 +156,12 @@ onMounted(() => {
 
 /*    2iem page accueil! */
 #one {
-  background-size: cover;
   width: 100%;
   height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: linear-gradient(#282658, #6f4b95);
 }
 
 .section-header {
@@ -195,14 +202,19 @@ onMounted(() => {
 }
 
 .content-style2 {
-  margin: auto;
+  margin: 0;
   width: 90%;
+  height: 95%;
   background: #fff;
   padding: 10%;
   overflow: hidden;
   box-shadow: 0 0 25px #000;
   border: 1px solid #444;
+  border-radius: 6px;
   text-align: justify;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  opacity: 0.8;
 }
 
 p {
