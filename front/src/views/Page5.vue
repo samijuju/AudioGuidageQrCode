@@ -1,6 +1,7 @@
 <template>
-  <section id="pg5" class="overflow-hidden" :style="{ backgroundImage: `url(${backgroundImagePg5})` }">
-    <div class="d-flex flex-row justify-content-center mt-5 mb-5">
+  <section class="zone-container overflow-hidden d-flex flex-column justify-content-center align-items-center"
+           :style="{ backgroundImage: `url(${backgroundImagePg5})` }">
+    <div class="zone-header d-flex justify-content-center align-items-center">
       <div class="d-flex flex-column justify-content-center align-items-center container-icons-vue" role="button"
            @click="goHome()">
         <BIconHouseFill class="icons-vue1  t2-5rem"/>
@@ -39,19 +40,12 @@ import backgroundImagePg5 from "@/assets/images/LeVent-800x537.jpg"
 const router = useRouter()
 
 function goHome() {
+  const hauteur = document.querySelector('#app').clientHeight
+  document.querySelector('#app').style.height = (2 * hauteur) + 'px'
   router.push('/')
 }
 
 </script>
 
 <style scoped>
-
-#pg5 {
-  width: 100%;
-  height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 </style>

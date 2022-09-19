@@ -1,6 +1,6 @@
 <template>
-  <section id="pg1" class="overflow-hidden" :style="{ backgroundImage: `url(${backgroundImagePg1})` }">
-    <div class="d-flex flex-row justify-content-center mt-5 mb-5">
+  <section class="zone-container overflow-hidden d-flex flex-column justify-content-center align-items-center" :style="{ backgroundImage: `url(${backgroundImagePg1})` }">
+    <div class="zone-header d-flex justify-content-center align-items-center">
       <div class="d-flex flex-column justify-content-center align-items-center container-icons-vue" role="button"
            @click="goHome()">
         <BIconHouseFill class="icons-vue1  t2-5rem"/>
@@ -21,9 +21,7 @@
         <p>mais celui la c’est un Maloya Zoizo!!!</p>
       </div>
     </div>
-
   </section>
-
 </template>
 
 <script setup>
@@ -36,18 +34,11 @@ import backgroundImagePg1 from "@/assets/images/Zozio.jpg"
 const router = useRouter()
 
 function goHome() {
+  const hauteur = document.querySelector('#app').clientHeight
+  document.querySelector('#app').style.height = (2 * hauteur) + 'px'
   router.push('/')
 }
 </script>
 
 <style scoped>
-
-#pg1 {
-  width: 100%;
-  height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 </style>

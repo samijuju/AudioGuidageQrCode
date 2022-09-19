@@ -133,6 +133,7 @@ function onScan(qrCodeMessage) {
 function goPage(idPage) {
   document.querySelector('#audio-ch' + idPage).play()
   router.push('/Page' + idPage)
+  document.querySelector('#app').style.height = '100vh'
 }
 
 onMounted(() => {
