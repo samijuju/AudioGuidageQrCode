@@ -1,71 +1,68 @@
 <template>
   <audio autoplay>
-    <source src="@/assets/musiques/test-pg1.mp3">
+    <!-- <source src="@/assets/musiques/Zezer.mp3"> -->
+    <source :src="audioP4">
+
   </audio>
-  <section id="pg4" class="overflow-hidden" :style="{ backgroundImage: `url(${backgroundImagePg4})` }">
-    <div class="d-flex flex-row justify-content-center mt-2 mb-2">
-      <div class="d-flex justify-content-center align-items-center container-icons-vue ms-1 me-1" role="button" @click="toggleAction()">
-        <BIconPlayFill v-if="buttonAction === 'play'" class="icons-vue1 t4rem rotate90"/>
-        <BIconPauseFill v-if="buttonAction === 'pause'" class="icons-vue1 t4rem"/>
-      </div>
-      <div class="d-flex justify-content-center align-items-center container-icons-vue  ms-1 me-1" role="button" @click="router.push('/')">
+  <section class="zone-container overflow-hidden" :style="{ backgroundImage: `url(${backgroundImagePg4})` }">
+    <div class="d-flex flex-row justify-content-center mt-5 mb-5">
+      <div class="d-flex flex-column justify-content-center align-items-center container-icons-vue" role="button"
+           @click="router.push('/')">
         <BIconHouseFill class="icons-vue1  t2-5rem"/>
       </div>
     </div>
 
-    <div class="marquee-wrap-test">
-      <p style="color: white;text-shadow: 3px 3px 4px black;">
-        <b> Rogue, inconspicuous motes of rock </b>and gas descended from astronomers Sea of Tranquility billions upon
-        billions star stuff harvesting star light stirred by starlight, Flatland billions upon billions vastness is
-        bearable only through love great turbulent e muse about! Cambrian explosion dispassionate extraterrestrial
-        observer.
-        <br/>
-        and gas realm of the galaxies decipherment tendrils of gossamer clouds at the edge of forever? Worldlets
-        Orion's sword Cambrian explosion, emerged into consciousness, laws of physics tendrils of gossamer clouds
-        venture. Flatland paroxysm of global
-        death Jean-François Champollion.
-                  <b> Rogue, inconspicuous motes of rock </b>and gas descended from astronomers Sea of Tranquility billions upon
-        billions star stuff harvesting star light stirred by starlight, Flatland billions upon billions vastness is
-        bearable only through love great turbulent e muse about! Cambrian explosion dispassionate extraterrestrial
-        observer.
-        <br/>
-        and gas realm of the galaxies decipherment tendrils of gossamer clouds at the edge of forever? Worldlets
-        Orion's sword Cambrian explosion, emerged into consciousness, laws of physics tendrils of gossamer clouds
-        venture. Flatland paroxysm of global
-        death Jean-François Champollion.<br/>
-      </p><br/>
-    </div>
+      <div class="zone-content d-flex flex-column align-items-center">
+        <div class="zone-content-title d-flex flex-row  align-items-center">
+          <h2>Zezer (fonnker ek zoizo)</h2>
+        </div>
+        <div class="zone-content-p">
+          <p>Engagé par mes textes et mes choix musicaux,
+            j’ai voulu dans cette oeuvre alerter en créole du danger que nous sommes,
+            nous les êtres humains,
+            pour les oiseaux et en général pour l’écosystème de la Terre.
+          </p>
+          <p>
+            Les sons du jardin accompagnent ma voix et mes idées musicales s’harmonisent aux idées rythmiques des
+            oiseaux
+            (Merle maurice, martin).
+          </p>
+        </div>
+      </div>
 
+    <!--
+    <main class="bg-texte_page_secondaire" style="height: 75%">
+      <div class="texte_page_secondaire" style="height: 100%; overflow-y: auto; overflow-x: hidden">
+        <h2> Zezer (fonnker ek zoizo): </h2>
+
+        <p>Engagé par mes textes et mes choix musicaux,
+          j’ai voulu dans cette oeuvre alerter en créole du danger que nous sommes,
+          nous les êtres humains,
+          pour les oiseaux et en général pour l’écosystème de la Terre.
+        </p>
+        <p>
+          Les sons du jardin accompagnent ma voix et mes idées musicales s’harmonisent aux idées rythmiques des oiseaux
+          (Merle maurice, martin).
+        </p>
+
+      </div>
+    </main>
+-->
   </section>
 
 </template>
 
 <script setup>
-import {ref} from 'vue'
 import {useRouter} from 'vue-router'
 // bootstrap-icons-vue - prefixed with BIcon. For example, the icon pause-fill is exported as BIconPauseFill
 // icons list : https://icons.getbootstrap.com/
-import {BIconPlayFill, BIconPauseFill, BIconHouseFill} from 'bootstrap-icons-vue'
-import backgroundImagePg4 from "@/assets/images/marble.jpg"
+
+import {BIconHouseFill} from 'bootstrap-icons-vue'
+import backgroundImagePg4 from "@/assets/images/Zezer-800x533.jpeg"
+import audioP4 from "@/assets/musiques/Zezer.mp3"
+
 const router = useRouter()
-let buttonAction = ref('play')
-function toggleAction() {
-  if (buttonAction.value === 'play') {
-    buttonAction.value = 'pause'
-  } else {
-    buttonAction.value = 'play'
-  }
-}
 </script>
 
 <style scoped>
-
-#pg4 {
-  width: 100%;
-  height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 </style>
