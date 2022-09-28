@@ -84,5 +84,7 @@ lint/outputs/
 lint/tmp/
 # lint/reports/
 
-node_modules
-www
+node_modules/
+www/
+platforms/
+plugins/
