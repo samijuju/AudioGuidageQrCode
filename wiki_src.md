@@ -6,17 +6,49 @@ cordova create AudioGuidageQrCode re.tibillet.AudioGuidageQrCode AudioGuidageQrC
 cd projet-chris-haga
 cordova platform add android
 cordova plugin add cordova-plugin-android-permissions
+cordova build android --release -- --packageType=bundle
 ```
 ### Activer le choix d'autoriser ou non l'utilisation de la camera (indispenssable !)
-Ajouter dans le fichier "platforms/android/app/src/main/AndroidManifest.xml" entre les balises "manifest":
+Ajouter dans le fichier "config.xml"
 ```
-<manifest .... >
-    ....
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.FLASHLIGHT" />
-    <uses-feature android:name="android.hardware.camera" android:required="true" />
-</manifest>
+<config-file target="AndroidManifest.xml" parent="/manifest" xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+</config-file>
 ```
+### Icons / Splash screen
+- icones: /res/android/(ldpi/mdpi/...).png   
+  ldpi    : 36x36 px   
+  mdpi    : 48x48 px   
+  hdpi    : 72x72 px   
+  xhdpi   : 96x96 px   
+  xxhdpi  : 144x144 px   
+  xxxhdpi : 192x192 px    
+- splash screen: /res/screen/android/(choix d'unseull fichier).png
+
+### Build
+- Après modification du front dans le fichier config.xml tag <widget>, modifier la version="1.0.x"
+- Suuprimer la platforme android
+```
+cordova platform remove android
+```
+- Ajouter de nouveau la platforme android
+```
+cordova platform add android@latest
+```
+- vérifier la compilation de l'application
+```
+cordova build android
+```
+
+### Créer un ""
+- Lancer andoid-studio
+- Menu "File" + "Sync Project with Gradle Files"
+- Menu "Build" + "Generate Signed Bundle / APK.."
+- Cocher "Android App Bundle" + "next"
+- Créer un "key store" ou utiliser en un déjà fait  + "Next"
+- Sélectionner "release" + "Finish"
+- Le bundle sera enregistrer sous "platforms/android/app/release"
 
 ## - Vue + vite (à la racine du projet)
 ```
@@ -102,76 +134,39 @@ cordova run android
 
 ## Debug sur navigateur - "chrome://inspect/#devices"
 
-## WPA
-
-### Installation
-
-#### Modules
+## divers
+### Changer de sdk (android)
+- Dans le fichier config.xml ajouter:
 ```
-npm install vite-plugin-pwa -D
-npm install workbox-precaching -D
+<platform name="android">
+  <preference name="android-minSdkVersion" value="29"/>
+  <preference name="android-targetSdkVersion" value="31" />
+  ...
+</platform>
 ```
-### Le fichier de service worker "serviceWorker.ts"
+- Supprimer et ajouter la platforme android
 ```
-import { precacheAndRoute } from 'workbox-precaching'
+cordova platform rm android
+cordova platform add android
+```
+- Attention aux autoristions, elles sont supprimées (platforms/android/app/src/main/AndroidManifest.xml)
 
-declare let self: ServiceWorkerGlobalScope
+### erreur build android
+```
+Unable to determine Android SDK directory
+```
+- Dans android-studio, menu "File" / "Sync Project with Gradle Files"
 
-self.addEventListener('message', (event) => {
-  if (event.data && event.data.type === 'SKIP_WAITING') self.skipWaiting()
-})
-// self.__WB_MANIFEST is default injection point
-precacheAndRoute(self.__WB_MANIFEST)
+### Maj Gradle
+
+#### Télécharger 
+https://services.gradle.org/distributions-snapshots/gradle-7.6-20220920234319+0000-bin.zip
+
+#### Installer
+```
+sudo mkdir /opt/gradle
+sudo unzip -d /opt/gradle gradle-7.6-20220920234319+0000-bin.zip
 ```
 
-### Icons
-Préparer 3 icons format png dans le dossier public(vite):
-- 1 résolutions 32x32, favicon-32x32.png
-- 2 résolutions 192x192, logo-192x192.png
-- 3 résolutions 512x512, logo-512x512.png
-
-### Configuration
-vite.config.js:
-```
-import {VitePWA} from 'vite-plugin-pwa'
-
-...
- plugins: [
-    vue(),
-    VitePWA({
-      mode: "development",
-      base: "/",
-      srcDir: "src",
-      filename: "serviceWorker.ts",
-      includeAssets: ["/favicon-32x32.png"],
-      strategies: "injectManifest",
-      manifest: {
-        name: "Aux sons du jardin",
-        short_name: "Aux sons du jardin",
-        theme_color: "#ffffff",
-        start_url: "/",
-        display: "standalone",
-        background_color: "#ffffff",
-        icons: [
-          {
-            src: "logo-192x192.png",
-            sizes: "192x192",
-            type: "image/png",
-          },
-          {
-            src: "/logo-512x512.png",
-            sizes: "512x512",
-            type: "image/png",
-          },
-          {
-            src: "logo-512x512.png",
-            sizes: "512x512",
-            type: "image/png",
-            purpose: "any maskable",
-          },
-        ]
-      }
-    })
-  ]
-...
-```
+### Configurer
+Dans .bashrc ajouter "export PATH=$PATH:/opt/gradle/gradle-7.6-20220920234319+0000/bin"
