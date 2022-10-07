@@ -5,16 +5,19 @@
 ### Installez les dépendances NPM
 
 - A la racine
+
 ```
 npm i
 ```
+
 - dans "front"
+
 ```
 npm i
 ```
 
 ### Build pour le web
- 
+
 ```
 npm run build
 ```
@@ -32,9 +35,12 @@ cordova run android
 
 [contact@tibillet.re](contact@tibillet.re)
 
-## Licence 
+## Licence
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />
 Les œuvres audio contenus dans ce dépot sont mis à disposition selon les termes de
 la <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Licence Creative Commons Attribution - Pas
 d’Utilisation Commerciale 4.0 International</a>.
+
+Le code de l’application mobile est publié ici même sur github sous licence MIT :
+[https://github.com/TiBillet/AudioGuidageQrCode/LICENCE](https://github.com/TiBillet/AudioGuidageQrCode/LICENCE).
