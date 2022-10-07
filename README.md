@@ -44,3 +44,6 @@ d’Utilisation Commerciale 4.0 International</a>.
 
 Le code de l’application mobile est publié ici même sur github sous licence MIT :
 [https://github.com/TiBillet/AudioGuidageQrCode/LICENCE](https://github.com/TiBillet/AudioGuidageQrCode/LICENCE).
+
+Les conditions générales d'utilisations sont disponibles sur ce dépot :
+[https://github.com/TiBillet/AudioGuidageQrCode/blob/main/CGUCGV.md](https://github.com/TiBillet/AudioGuidageQrCode/blob/main/CGUCGV.md)
