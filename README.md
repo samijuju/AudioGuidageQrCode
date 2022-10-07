@@ -29,7 +29,9 @@ cordova build android
 cordova run android
 ```
 
-### Debug sur navigateur - "chrome://inspect/#devices"
+### Debug sur navigateur 
+
+    "chrome://inspect/#devices"
 
 ## Contact :
 
