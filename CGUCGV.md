@@ -41,13 +41,17 @@ La conformité au GGPD est assuré par la coopérative SCIC TiBillet Coop.
 
 # Article 5 : Propriété intellectuelle
 
+
 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />
-Les œuvres audio contenus dans ce dépot sont mis à disposition selon les termes de
+Les œuvres audiovisuelles (Titres musicaux, photos, textes) contenus dans ce dépot sont mis à disposition selon les termes de
 la <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Licence Creative Commons Attribution - Pas
 d’Utilisation Commerciale 4.0 International</a>.
 
-Le code de l’application mobile est publié sur github sous licence MIT :
-[https://github.com/TiBillet/Aux_sons_du_jardin_wpa/LICENCE](https://github.com/TiBillet/Aux_sons_du_jardin_wpa/LICENCE)
+Le code de l’application mobile est publié ici même sur github sous licence MIT :
+[https://github.com/TiBillet/AudioGuidageQrCode/LICENCE](https://github.com/TiBillet/AudioGuidageQrCode/LICENCE).
+
+Les conditions générales d'utilisations sont disponibles sur ce dépot :
+[https://github.com/TiBillet/AudioGuidageQrCode/blob/main/CGUCGV.md](https://github.com/TiBillet/AudioGuidageQrCode/blob/main/CGUCGV.md)
 
 # Article 6 : Responsabilité
 
