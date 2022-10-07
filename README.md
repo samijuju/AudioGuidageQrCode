@@ -31,7 +31,9 @@ cordova run android
 
 ### Debug sur navigateur 
 
-    "chrome://inspect/#devices"
+Entrez l'adresse suivante dans chromium :
+
+    chrome://inspect/#devices
 
 ## Contact :
 
